@@ -1,0 +1,55 @@
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.book-resize{
+    height: 160px;
+    width: auto;
+    object-fit: auto;
+}
+.book-card{
+
+}
+.book-card-hover:hover{
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.25);
+}
+.result-quantity{
+height: 50px;
+vertical-align: middle;
+}
+
+.container-book {
+    position: relative;
+    width: 50%;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.container-book:hover .image {
+  opacity: 0.3;
+}
+
+.container-book:hover .middle {
+  opacity: 1;
+}
+                    
