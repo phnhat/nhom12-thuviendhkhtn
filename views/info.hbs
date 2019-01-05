@@ -1,0 +1,158 @@
+<div class="container mt-4">
+
+    <div class="row">
+
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 button-align">
+            <div>
+                <img src="images/book1.jpg" class="book-info" alt="">
+                <div class="mt-3">
+                    <button type="button" class="btn btn-success button-align" data-toggle="modal" data-target="#myModal">Đăng
+                        ký mượn sách</button>
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+            <h3>Thông tin chi tiết</h3>
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <th>Loại Sách</th>
+                        <td>Toán</td>
+                    </tr>
+                    <tr>
+                        <th>Tên sách</th>
+                        <td>Giáo Trình toán cao cấp giải tích</td>
+                    </tr>
+                    <tr>
+                        <th>Tác giả</th>
+                        <td>Phạm Hồng Danh</td>
+                    </tr>
+                    <tr>
+                        <th>Thông tin xuất bản</th>
+                        <td>Đại học Quốc gia TP HCM, 2003</td>
+                    </tr>
+                    <tr>
+                        <th>Số phân loại</th>
+                        <td>516.05</td>
+                    </tr>
+                    <tr>
+                        <th>Dữ liệu xếp giá</th>
+                        <td>516.05 NG- D 2003</td>
+                    </tr>
+                    <tr>
+                        <th>Số đăng ký cá biệt</th>
+                        <td>49975</td>
+                    </tr>
+                    <tr>
+                        <th>Kho lưu trữ</th>
+                        <td>B</td>
+                    </tr>
+                    <tr>
+                        <th>Tình trạng</th>
+                        <td><span class="badge badge-success">Sẵn sàng phục vụ</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Đăng ký mượn sách</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+
+                    <form action="" method="" role="form">
+
+                        <div class="form-group">
+                            <label for="">Ngày lấy sách</label>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="optradio">28/11
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="optradio">29/11
+                                </label>
+                            </div>
+                            <div class="form-check disabled">
+                                <label class="form-check-label">
+                                    <input type="radio" class="form-check-input" name="optradio">30/11
+                                </label>
+                            </div>
+
+                            <i>Lưu ý: nếu tới ngày lên lấy mà bạn không lên lấy thì đơn đăng ký sách này sẽ bị hủy bỏ
+                                Nếu số lần bạn đăng ký mà không lên lấy quá nhiều thì tài khoản sẽ bị cấm. </i>
+                            <br />
+                            <br/>
+                            <div class="form-group">
+                                <label for="" class="">Số ngày mượn <i>(Tối đa 21 ngày)</i> </label>
+
+                                <input type="number" name="" id="input" class="form-control" value="" required="required"
+                                    pattern="" title="" placeholder="Nhập số ngày" style="width: 176px;">
+                            </div>
+                            <div class="form-group">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="">
+                                    Tôi cam kết trả sách đúng theo thời hạn và nếu trễ thì sẽ trả thêm 1000 VND/ 1 ngày
+                                    trễ
+                                </label>
+                            </div>
+                        </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="" class="btn btn-primary" data-toggle="modal" data-target="#myModal2" data-dismiss="modal">Đăng ký mượn</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Hủy</button>
+                </div>
+
+                </form>
+
+            </div>
+
+            <!-- Modal footer -->
+
+
+
+        </div>
+    </div>
+</div>
+</div>
+<div class="modal fade" id="myModal2">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Đăng ký mượn sách thành công</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        
+Hãy vào mục "Quản lý đơn sách" để theo dõi đơn sách của bạn
+
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,134 @@
+<div class="container pt-5">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Số đăng ký</th>
+                <th>Tên sách mượn</th>
+                <th>Ngày lấy sách</th>
+                <th>Ngày trả sách</th>
+                <th>Số ngày trễ</th>
+                <th>Tiền phải trả</th>
+                <th>Tình trạng</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>49975</td>
+                <td>Giáo Trình toán cao...</td>
+                <td>28/11/2018</td>
+                <td>02/12/2018</td>
+                <td id="test1">0</td>
+                <td id="test2">0 VND</td>
+                <td id="test3"><span class="badge badge-warning">Đang chờ lấy sách</span></td>
+                <td id="test4">
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal" >Hủy</button>
+                </td>
+            </tr>
+            <tr>
+                <td>70005573</td>
+                <td>Phòng cháy trong cô...</td>
+                <td>25/11/2018</td>
+                <td>10/12/2018</td>
+                <td>0</td>
+                <td>0 VND</td>
+                <td><span class="badge badge-success">Đang mượn</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>25369</td>
+                <td>Cẩm nang pháp luật...</td>
+                <td>17/11/2018</td>
+                <td>20/11/2018</td>
+                <td>8</td>
+                <td>8.000 VND</td>
+                <td><span class="badge badge-danger">Trễ hẹn</span></td>
+                <td>
+            </tr>
+            <tr>
+                <td>22082</td>
+                <td>Tìm hiểu công ước v...</td>
+                <td>06/11/2018</td>
+                <td>15/11/2018</td>
+                <td>5</td>
+                <td>5.000 VND</td>
+                <td><span class="badge badge-secondary">Đã trả sách</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>27075</td>
+                <td>Flammability and se..</td>
+                <td>02/10/2018</td>
+                <td>16/10/2018</td>
+                <td>-</td>
+                <td>- VND</td>
+                <td><span class="badge badge-secondary">Đã hủy</span></td>
+                <td></td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Xác nhận hủy đơn</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                Đăng ký sách mà hủy đơn sẽ gây ảnh hưởng đến người khác, lần sau bạn hãy cân nhắc kỹ trước khi đặt
+                sách.
+                Hủy nhiều đơn sẽ khiến bạn thuộc vào diện xem xét khóa tài khoản. Bạn chắc chắn muốn hủy đơn này chứ.
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal2" data-dismiss="modal"
+                    onclick="myFunction()">Xác nhận hủy</button>
+
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="myModal2">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Hủy đơn thành công</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                Đơn của bạn đã được hủy thành công
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    function myFunction(){
+        document.getElementById("test1").textContent = "-";
+        document.getElementById("test2").textContent = "- VND";
+        document.getElementById("test3").innerHTML = "<span class='badge badge-secondary'>Đã hủy</span>";
+        document.getElementById("test4").innerHTML = "";
+    }
+</script>

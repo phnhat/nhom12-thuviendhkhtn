@@ -2,24 +2,24 @@
         <img src="images/logo.jpg" alt="" class="center">
         <div style="text-align:center; padding-left:20%; padding-right:20%; ">
                 <div class="row">
-                        <form class="form-inline" action="/search-result" method="get" role="form">
+                        <form class="form-inline" action="/search" method="get" role="form" autocomplete="off">
                             <div class="form-group">
-                                <select name="type" id="inputtype" class="form-control mr-2" required="required">
-                                    <option value="">Tên sách</option>
-                                    <option value="">Loại sách</option>
-                                    <option value="">Tác giả</option>
-                                    <option value="">Nhà xuất bản</option>
+                                <select name="t" id="inputtype" class="form-control mr-2">
+                                    <option value="name">Tên sách</option>
+                                    <option value="type">Loại sách</option>
+                                    <option value="author">Tác giả</option>
+                                    <option value="producer">Nhà xuất bản</option>
                                 </select>
                             
-                            <input type="text" name="" class="form-control mr-sm-2"  placeholder="Bạn muốn tìm gì? Sách, giáo trình, . . ." style="width: 530px;">
+                            <input type="text" name="q" class="form-control mr-sm-2"  placeholder="Bạn muốn tìm gì? Sách, giáo trình, . . ." style="width: 530px;">
                             
                         </div>
+                        </br>
+                        <button type="submit" class="btn btn-outline-primary" style=" margin-top: 5%; margin-left:auto; margin-right:auto;">Tìm Kiếm</button>
                         </form>
                         
                     </div>
-                    <button type="submit" class="btn btn-outline-primary" style=" margin-top: 5%;">Tìm Kiếm</button>
+                    
 
         </div>
-
-
     </div>

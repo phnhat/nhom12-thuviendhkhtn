@@ -8,6 +8,8 @@ var hbs = require('express-handlebars');
 var indexRouter = require('./routes/index');
 var searchRouter = require('./routes/search');
 var searchttRouter = require('./routes/searchtt');
+var infoRouter = require('./routes/info');
+var orderRouter = require('./routes/order');
 
 var app = express();
 
@@ -25,6 +27,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/search', searchRouter);
 app.use('/searchtt', searchttRouter);
+app.use('/info', infoRouter);
+app.use('/order', orderRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
