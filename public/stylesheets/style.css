@@ -1,48 +1,57 @@
 .center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
-.book-resize{
-    height: 160px;
-    width: auto;
-    object-fit: auto;
+
+.book-resize {
+  height: 160px;
+  width: auto;
+  object-fit: auto;
 }
-.book-info{
+
+.book-info {
   height: auto;
-  width: 300px;;
+  width: 300px;
+  ;
   object-fit: auto;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-.book-card{
+
+.book-card {
   display: block;
   text-decoration: none;
   text-decoration-line: none;
-  color:rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
   width: 100%;
   height: 100%;
 }
-a:hover{
+
+a:hover {
   text-decoration: none;
 }
-.book-title{
-  color:rgb(243, 151, 12);
+
+.book-title {
+  color: rgb(243, 151, 12);
 }
-.book-author{
-  color:rgb(8, 8, 8);
+
+.book-author {
+  color: rgb(8, 8, 8);
 }
-.book-card-hover:hover{
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,.25);
+
+.book-card-hover:hover {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .25);
 }
-.result-quantity{
-height: 50px;
-vertical-align: middle;
+
+.result-quantity {
+  height: 50px;
+  vertical-align: middle;
 }
 
 .container-book {
-    position: relative;
-    width: 50%;
+  position: relative;
+  width: 50%;
 }
 
 .image {
@@ -72,20 +81,98 @@ vertical-align: middle;
 .container-book:hover .middle {
   opacity: 1;
 }
-.button-align{
+
+.button-align {
   text-align: center;
 }
-.result-area{
-  padding-left:15px;
+
+.result-area {
+  padding-left: 15px;
 }
-.select-size  input{
+
+.select-size input {
   display: none;
 }
 
-.layout{
+.layout {
   background-image: linear-gradient(to right, #034fa7 0%, #02448e 100%);
 }
-.nav-text{
+
+.nav-text {
   color: white;
   font-weight: bold;
-}         
+}
+
+.send-button {
+  background: #54C7C3;
+  width: 100%;
+  font-weight: 600;
+  color: #fff;
+  padding: 8px 25px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.g-button {
+  color: #fff !important;
+  border: 1px solid #EA4335;
+  background: #ea4335 !important;
+  width: 100%;
+  font-weight: 600;
+  color: #fff;
+  padding: 8px 25px;
+}
+
+.my-input {
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  cursor: text;
+  padding: 8px 10px;
+  transition: border .1s linear;
+}
+
+.header-title {
+  margin-top: 10px;
+}
+
+h1 {
+  font-size: 31px;
+  line-height: 40px;
+  font-weight: 600;
+  color: #4c5357;
+}
+
+.login-or {
+  position: relative;
+  color: #aaa;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.span-or {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: -2px;
+  margin-left: -25px;
+  background-color: #fff;
+  width: 50px;
+  text-align: center;
+}
+
+.hr-or {
+  height: 1px;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+
+@media screen and (max-width:480px) {
+  h1 {
+    font-size: 26px;
+  }
+}
