@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="/stylesheets/jquery.min.js"></script>
+    <script src="/stylesheets/bootstrap.min.js"></script>
+    <title>{{title}}</title>
+    <style>
+      .img-wrapper {
+        overflow: hidden;
+        padding-top: 5px;
+        padding-bottom: 15px;
+      }
+
+      .img-wrapper-sm {
+        height: 100px;
+      }
+
+      .img-wrapper-md {
+        height: 173.5px;
+      }
+
+      .img-wrapper img {
+        display: block;
+        height: 100%;
+        margin: 0 auto;
+      }
+
+      .modal-dialog {
+        position: relative;
+        transform: unset!important;
+      }
+
+      .modal-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        width: 720px;
+      }
+
+      .modal-header {
+        text-align: left;
+      }
+
+      .modal-body > div {
+        display: inline-block;
+        vertical-align: top;
+        width: 320px;
+        margin: 0 10px;
+      }
+
+      .modal-body input, .modal-body select {
+        width: 100%;
+      }
+
+      .modal-body label {
+        margin-top: 25px;
+        margin-bottom: 0;
+      }
+
+      #btnProductImage {
+        width: 100%;
+      }
+
+      #paging {
+        display: flex;
+        width: 100%;
+        align-items: center;
+      }
+
+      #paging .disabled {
+        cursor: not-allowed;
+      }
+    </style>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <section id="Products" style="padding: 30px; width: 100%">
+                <h1>DANH SÁCH SÁCH</h1>
+                <hr/>
+                <button class="btn btn-success" id="AddBook" data-toggle="modal" data-target="#DetailModal">Thêm sách</button>
+                <p></p>
+                <div class="table-scroll">
+                    <table class="table table-condensed table-bordered table-hover table-striped table-responsive" id="ProductsPanel">
+                        <thead>
+                            <tr>
+                                <th width="92px">Hình ảnh</th>
+                                <th width="6%">Loại sách</th>
+                                <th width="17%">Tên sách</th>
+                                <th width="17%">Tác giả</th>
+                                <th width="17%">Nhà xuất bản</th>
+                                <th>Số phân loại</th>
+                                <th>Dữ liệu xếp giá</th>
+                                <th>Số đăng ký cá biệt</th>
+                                <th>Kho lưu trữ</th>
+                                <th>Tình trạng</th>
+                                <th width="110px">Hành động</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-scroll">
+                          <tr>
+                            <td class="img-wrapper img-wrapper-sm">
+                                <img src="images/book1.jpg" alt="Hình ảnh">
+                            </td>
+                            <td>Toán</td>
+                            <td>Giáo trình Toán Cao cấp Giải Tích</td>
+                            <td>Phạm Hồng Danh</td>
+                            <td>Đại học Quốc gia TP.Hồ Chí Minh</td>
+                            <td>516.05</td>
+                            <td>516.05 NG- D 2003</td>
+                            <td>49975</td>
+                            <td>B</td>
+                            <td data-status="1"><span class="badge badge-success">Sẵn sàng phục vụ</span></td>
+                            <td>
+                              <button class="btn btn-primary" data-toggle="modal" data-target="#DetailModal">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M14 8.77v-1.6l-1.94-.64-.45-1.09.88-1.84-1.13-1.13-1.81.91-1.09-.45-.69-1.92h-1.6l-.63 1.94-1.11.45-1.84-.88-1.13 1.13.91 1.81-.45 1.09L0 7.23v1.59l1.94.64.45 1.09-.88 1.84 1.13 1.13 1.81-.91 1.09.45.69 1.92h1.59l.63-1.94 1.11-.45 1.84.88 1.13-1.13-.92-1.81.47-1.09L14 8.75v.02zM7 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg>
+                              </button>
+                              <button class="btn btn-danger" data-toggle="modal" data-target="#DeleteModal">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16"><path fill-rule="evenodd" d="M11 2H9c0-.55-.45-1-1-1H5c-.55 0-1 .45-1 1H2c-.55 0-1 .45-1 1v1c0 .55.45 1 1 1v9c0 .55.45 1 1 1h7c.55 0 1-.45 1-1V5c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm-1 12H3V5h1v8h1V5h1v8h1V5h1v8h1V5h1v9zm1-10H2V3h9v1z"/></svg>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="img-wrapper img-wrapper-sm">
+                                <img src="images/book2.jpg" alt="Hình ảnh">
+                            </td>
+                            <td>Toán</td>
+                            <td>Toán Cao cấp</td>
+                            <td>Nguyễn Văn Huấn</td>
+                            <td>Đại học Quốc gia TP.Hồ Chí Minh</td>
+                            <td>456.05</td>
+                            <td>456.15 NG- D 2004</td>
+                            <td>49345</td>
+                            <td>A</td>
+                            <td data-status="1"><span class="badge badge-success">Sẵn sàng phục vụ</span></td>
+                            <td>
+                              <button class="btn btn-primary" data-toggle="modal" data-target="#DetailModal"
+                              >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M14 8.77v-1.6l-1.94-.64-.45-1.09.88-1.84-1.13-1.13-1.81.91-1.09-.45-.69-1.92h-1.6l-.63 1.94-1.11.45-1.84-.88-1.13 1.13.91 1.81-.45 1.09L0 7.23v1.59l1.94.64.45 1.09-.88 1.84 1.13 1.13 1.81-.91 1.09.45.69 1.92h1.59l.63-1.94 1.11-.45 1.84.88 1.13-1.13-.92-1.81.47-1.09L14 8.75v.02zM7 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg>
+                              </button>
+                              <button class="btn btn-danger" data-toggle="modal" data-target="#DeleteModal">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16"><path fill-rule="evenodd" d="M11 2H9c0-.55-.45-1-1-1H5c-.55 0-1 .45-1 1H2c-.55 0-1 .45-1 1v1c0 .55.45 1 1 1v9c0 .55.45 1 1 1h7c.55 0 1-.45 1-1V5c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm-1 12H3V5h1v8h1V5h1v8h1V5h1v8h1V5h1v9zm1-10H2V3h9v1z"/></svg>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="img-wrapper img-wrapper-sm">
+                                <img src="images/book3.jpg" alt="Hình ảnh">
+                            </td>
+                            <td>Toán</td>
+                            <td>Bài tập Toán Cao cấp (tập 2)</td>
+                            <td>Nguyễn Đinh Trí</td>
+                            <td>Nhà xuất bản Giáo dục</td>
+                            <td>712.02</td>
+                            <td>341.27 NG- D 2002</td>
+                            <td>58573</td>
+                            <td>B</td>
+                            <td data-status="3"><span class="badge badge-primary">Đang cho mượn</span></td>
+                            <td>
+                              <button class="btn btn-primary" data-toggle="modal" data-target="#DetailModal">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M14 8.77v-1.6l-1.94-.64-.45-1.09.88-1.84-1.13-1.13-1.81.91-1.09-.45-.69-1.92h-1.6l-.63 1.94-1.11.45-1.84-.88-1.13 1.13.91 1.81-.45 1.09L0 7.23v1.59l1.94.64.45 1.09-.88 1.84 1.13 1.13 1.81-.91 1.09.45.69 1.92h1.59l.63-1.94 1.11-.45 1.84.88 1.13-1.13-.92-1.81.47-1.09L14 8.75v.02zM7 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg>
+                              </button>
+                              <button class="btn btn-danger" data-toggle="modal" data-target="#DeleteModal">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16"><path fill-rule="evenodd" d="M11 2H9c0-.55-.45-1-1-1H5c-.55 0-1 .45-1 1H2c-.55 0-1 .45-1 1v1c0 .55.45 1 1 1v9c0 .55.45 1 1 1h7c.55 0 1-.45 1-1V5c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm-1 12H3V5h1v8h1V5h1v8h1V5h1v8h1V5h1v9zm1-10H2V3h9v1z"/></svg>
+                              </button>
+                            </td>
+                          </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="paging">
+                  <ul class="pagination">
+                    <li class="page-item disabled"><a class="page-link" href="#">Trang trước</a></li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item disabled"><a class="page-link" href="#">Trang sau</a></li>
+                  </ul>
+                </div>
+
+                <div class="modal fade" id="DetailModal" role="dialog">
+                  <div class="modal-dialog">
+                      <div class="modal-content">
+                          <form >
+                              <div class="modal-header bg-primary text-white">
+                                  <h4 class="modal-title">Thông tin chi tiết sản phẩm</h4>
+                              </div>
+                              <div class="modal-body form-group container-fluid">
+                                  <div>
+                                      <label>Hình ảnh</label>
+                                      <div class="img-wrapper img-wrapper-md">
+                                          <img src="" alt="Hình ảnh">
+                                      </div>
+                                      <input type="file" id="ProductImage" name="ProductImage" accept="image/*" class="btn btn-default" hidden />
+                                      <div><button class="btn btn-info" id="btnProductImage">Thêm/chỉnh sửa hình ảnh</button></div>
+                                      <!-- type -->
+                                      <label for="ProductType">Loại sách</label>
+                                      <input type="text" id="ProductType" name="ProductType" class="form-control" required autofocus />
+                                      <!-- name -->
+                                      <label for="ProductName">Tên sách</label>
+                                      <input type="text" id="ProductName" name="ProductName" class="form-control" required />
+                                      <!-- author -->
+                                      <label for="ProductAuthor">Tác giả</label>
+                                      <input type="text" id="ProductAuthor" name="ProductAuthor" class="form-control" required />
+                                  </div>
+                                  <div>
+                                      <!-- publisher -->
+                                      <label for="ProductPublisher">Nhà xuất bản</label>
+                                      <input type="text" id="ProductPublisher" name="ProductPublisher" class="form-control" required />
+                                      <!-- số phân loại -->
+                                      <label for="ProductSPL">Số phân loại</label>
+                                      <input type="text" id="ProductSPL" name="ProductSPL" placeholder="123.45" class="form-control" required />
+                                      <!-- dữ liệu xếp giá -->
+                                      <label for="ProductDLSG">Dữ liệu xếp giá</label>
+                                      <input type="text" id="ProductDLSG" name="ProductDLSG" placeholder="123.45 AB- C 2000" class="form-control" required />
+                                      <!-- số đăng ký cá biệt -->
+                                      <label for="ProductSDKCB">Số đăng ký cá biệt</label>
+                                      <input type="text" id="ProductSDKCB" name="ProductSDKCB" placeholder="12345" minlength="5" maxlength="5" class="form-control" required />
+                                      <!-- kho lưu trữ -->
+                                      <label for="ProductStorage">Kho lưu trữ</label>
+                                      <input type="text" id="ProductStorage" name="ProductStorage" placeholder="A, B, C..." class="form-control" required />
+                                      <!-- tình trạng -->
+                                      <label for="ProductStatus">Tình trạng</label>
+                                      <select class="form-control" id="ProductStatus" name="ProductStatus">
+                                        <option value="1">Sẵn sàng phục vụ</option>
+                                        <option value="2">Lưu trữ</option>
+                                        <option value="3">Đang cho mượn</option>
+                                      </select>
+                                  </div>
+                              </div>
+                              <div class="modal-footer">
+                                  <input type="submit" class="btn btn-primary" data-dismiss="modal" id="ModalSave" value="Lưu thông tin"/>
+                                  <button type="button" class="btn btn-default" data-dismiss="modal" id="ModalSaveCancel">Hủy</button>
+                              </div>
+                          </form>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="modal fade" id="DeleteModal" role="dialog">
+                  <div class="modal-dialog ">
+                      <div class="modal-content">
+                          <form>
+                              <div class="modal-header bg-danger text-white" >
+                                  <h4 class="modal-title">Xác nhận</h4>
+                              </div>
+                              <div class="modal-body form-group container-fluid">
+                                  <p>Chắc chắn xóa sách này?</p>
+                              </div>
+                              <div class="modal-footer">
+                                  <button type="button" class="btn btn-danger" data-dismiss="modal" id="ModalDelete">Xóa sách</button>
+                                  <button type="button" class="btn btn-default" data-dismiss="modal" id="ModalDeleteCancel">Hủy</button>
+                              </div>
+                          </form>
+                      </div>
+                  </div>
+              </div>
+            </section>
+  </div>
+
+  <script>
+    window.onload = function() {
+      // Add button =================================================================================
+      var isAddingBook = false;
+      document.getElementById("AddBook").addEventListener("click", function(e) {
+        isAddingBook = true;
+        // reset fields
+        document.querySelector(".img-wrapper-md img").setAttribute("src", "images/default_book.jpg");
+        document.getElementById("ProductType").value = "";
+        document.getElementById("ProductName").value = "";
+        document.getElementById("ProductAuthor").value = "";
+        document.getElementById("ProductPublisher").value = "";
+        document.getElementById("ProductSPL").value = "";
+        document.getElementById("ProductDLSG").value = "";
+        document.getElementById("ProductSDKCB").value = "";
+        document.getElementById("ProductStorage").value = "";
+        document.getElementById("ProductStatus").innerHTML = `
+                                      <select class="form-control" id="ProductStatus" name="ProductStatus">
+                                        <option value="1" selected>Sẵn sàng phục vụ</option>
+                                        <option value="2">Lưu trữ</option>
+                                        <option value="3">Đang cho mượn</option>
+                                      </select>`
+      })
+
+      // Edit button ===============================================================================
+      var trToEdit = null;
+      function onEditBtnClick() {
+          isAddingBook = false;
+          trToEdit = this.closest("tr");
+          const 
+            imgSrc = trToEdit.children[0].querySelector("img").getAttribute("src"),
+            type = trToEdit.children[1].textContent,
+            name = trToEdit.children[2].textContent,
+            author = trToEdit.children[3].textContent,
+            publisher = trToEdit.children[4].textContent,
+            spl = trToEdit.children[5].textContent,
+            dlsg = trToEdit.children[6].textContent,
+            sdkcb = trToEdit.children[7].textContent,
+            storage = trToEdit.children[8].textContent,
+            status = trToEdit.children[9].getAttribute("data-status")
+
+          document.querySelector(".img-wrapper-md img").setAttribute("src", imgSrc);
+          document.getElementById("ProductType").value = type;
+          document.getElementById("ProductName").value = name;
+          document.getElementById("ProductAuthor").value = author;
+          document.getElementById("ProductPublisher").value = publisher;
+          document.getElementById("ProductSPL").value = spl;
+          document.getElementById("ProductDLSG").value = dlsg;
+          document.getElementById("ProductSDKCB").value = sdkcb;
+          document.getElementById("ProductStorage").value = storage;
+          document.querySelectorAll("#ProductStatus option").forEach(function(opt) {
+            if(opt.value === status) opt.setAttribute("selected", "selected")
+            else opt.removeAttribute("selected")
+          });
+      }
+      document.querySelectorAll("table .btn-primary").forEach(function(btn) { 
+        btn.addEventListener("click", onEditBtnClick)});
+      // change book image button
+      document.getElementById("btnProductImage").addEventListener("click", function(e) {
+        e.preventDefault();
+        document.getElementById("ProductImage").click();
+      })
+      // Confirm save new information
+      document.getElementById("ModalSave").addEventListener("click", function(e) {
+        console.log(e.target.checkValidity())
+        const imgSrc = document.querySelector(".img-wrapper-md img").getAttribute("src"),
+        type = document.getElementById("ProductType").value,
+        name = document.getElementById("ProductName").value,
+        author = document.getElementById("ProductAuthor").value,
+        publisher = document.getElementById("ProductPublisher").value,
+        spl = document.getElementById("ProductSPL").value,
+        dlsg = document.getElementById("ProductDLSG").value,
+        sdkcb = document.getElementById("ProductSDKCB").value,
+        storage = document.getElementById("ProductStorage").value,
+        status = document.getElementById("ProductStatus").value,
+        statusLabel = Array.from(document.querySelectorAll("#ProductStatus option")).filter(function(opt) {
+          return opt.value === status
+        })[0].textContent;
+        
+        if(isAddingBook === false) {
+          trToEdit.children[0].querySelector("img").setAttribute("src" , imgSrc);
+          trToEdit.children[1].textContent = type;
+          trToEdit.children[2].textContent = name;
+          trToEdit.children[3].textContent = author;
+          trToEdit.children[4].textContent = publisher;
+          trToEdit.children[5].textContent = spl;
+          trToEdit.children[6].textContent = dlsg;
+          trToEdit.children[7].textContent = sdkcb;
+          trToEdit.children[8].textContent = storage;
+          trToEdit.children[9].setAttribute("data-status", status);
+          trToEdit.children[9].innerHTML = `<span class="badge badge-${+status === 1 ? "success" : +status === 2 ? "warning" : +status === 3 && "primary"}">${statusLabel}</span>`
+        }
+        else { // adding new book
+          const newTr = document.createElement("tr");
+          newTr.innerHTML = `
+                            <td class="img-wrapper img-wrapper-sm">
+                                <img src="images/default_book.jpg" alt="Hình ảnh">
+                            </td>
+                            <td>${type}</td>
+                            <td>${name}</td>
+                            <td>${author}</td>
+                            <td>${publisher}</td>
+                            <td>${spl}</td>
+                            <td>${dlsg}</td>
+                            <td>${sdkcb}</td>
+                            <td>${storage}</td>
+                            <td data-status="${status}"><span class="badge badge-${+status === 1 ? "success" : +status === 2 ? "warning" : +status === 3 && "primary"}">${statusLabel}</span></td>
+                            <td>
+                              <button class="btn btn-primary" data-toggle="modal" data-target="#DetailModal" >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M14 8.77v-1.6l-1.94-.64-.45-1.09.88-1.84-1.13-1.13-1.81.91-1.09-.45-.69-1.92h-1.6l-.63 1.94-1.11.45-1.84-.88-1.13 1.13.91 1.81-.45 1.09L0 7.23v1.59l1.94.64.45 1.09-.88 1.84 1.13 1.13 1.81-.91 1.09.45.69 1.92h1.59l.63-1.94 1.11-.45 1.84.88 1.13-1.13-.92-1.81.47-1.09L14 8.75v.02zM7 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg>
+                              </button>
+                              <button class="btn btn-danger" data-toggle="modal" data-target="#DeleteModal" >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16"><path fill-rule="evenodd" d="M11 2H9c0-.55-.45-1-1-1H5c-.55 0-1 .45-1 1H2c-.55 0-1 .45-1 1v1c0 .55.45 1 1 1v9c0 .55.45 1 1 1h7c.55 0 1-.45 1-1V5c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm-1 12H3V5h1v8h1V5h1v8h1V5h1v8h1V5h1v9zm1-10H2V3h9v1z"/></svg>
+                              </button>
+                            </td>`
+          // add to table
+          const tbody = document.querySelector("tbody");
+          tbody.insertBefore(newTr, tbody.firstChild);
+          tbody.firstChild.querySelector(".btn-primary").addEventListener("click", onEditBtnClick);
+          tbody.firstChild.querySelector(".btn-danger").addEventListener("click", onDeleteBtnClick)
+        }
+      })
+
+      // Delete button =============================================================================
+      var trToRm = null;
+      function onDeleteBtnClick() {
+        trToRm = this.closest("tr");
+      }
+
+      document.querySelectorAll("table .btn-danger").forEach((function(btn) {
+        btn.addEventListener("click", onDeleteBtnClick)
+      }))
+      // Confirm delete
+      document.getElementById("ModalDelete").addEventListener("click", function(e) {
+        document.querySelector("section tbody").removeChild(trToRm);
+      })
+    }
+  </script>
+</body>
+</html>
